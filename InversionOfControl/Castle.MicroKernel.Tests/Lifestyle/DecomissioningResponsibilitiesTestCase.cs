@@ -210,7 +210,13 @@ namespace Castle.MicroKernel.Tests.Lifestyle
 
 		public abstract class DisposableBase : IDisposable
 		{
-			public bool IsDisposed { get; private set; }
+			private bool isDisposed = false;
+
+			public bool IsDisposed 
+			{ 
+				get { return isDisposed; }
+				set { isDisposed = value; }
+			}
 
 			public void Dispose()
 			{

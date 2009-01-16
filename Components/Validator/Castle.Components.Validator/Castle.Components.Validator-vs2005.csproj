@@ -63,9 +63,9 @@
     <Compile Include="Attributes\ValidateSetAttribute.cs" />
     <Compile Include="Attributes\ValidateSingleAttribute.cs" />
     <Compile Include="Attributes\ValidatorContainerInterfaceFlagAttribute.cs" />
-    <Compile Include="Contibutors\AbstractValidationContributor.cs" />
-    <Compile Include="Contibutors\SelfValidationContributor.cs" />
-    <Compile Include="Contibutors\ValidatorContainerInterfaceValidationContributor.cs" />
+    <Compile Include="Contributors\AbstractValidationContributor.cs" />
+    <Compile Include="Contributors\SelfValidationContributor.cs" />
+    <Compile Include="Contributors\ValidatorContainerInterfaceValidationContributor.cs" />
     <Compile Include="DefaultValidationPerformer.cs" />
     <Compile Include="IHasValidationPerformerDependency.cs" />
     <Compile Include="IHasValidatorRegistryDependency.cs" />
@@ -160,11 +160,6 @@
     <Compile Include="BrowserValidationConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Messages.he.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Messages.es.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Messages.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.es.Designer.cs</LastGenOutput>

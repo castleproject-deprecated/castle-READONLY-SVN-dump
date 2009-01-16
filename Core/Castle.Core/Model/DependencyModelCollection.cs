@@ -37,9 +37,38 @@ namespace Castle.Core
 		/// Initializes a new instance of the <see cref="DependencyModelCollection"/> class.
 		/// </summary>
 		/// <param name="dependencies">The dependencies.</param>
-		public DependencyModelCollection(IList<DependencyModel> dependencies)
-			: base(dependencies)
+		public DependencyModelCollection(IEnumerable<DependencyModel> dependencies)
 		{
+			if (dependencies == null) return;
+
+			foreach (DependencyModel depModel in dependencies)
+			{
+				if (depModel == null)
+				{
+					throw new ArgumentNullException("dependencies", "dependencies has null entry");
+				}
+
+				Add(depModel);
+			}
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="DependencyModelCollection"/> class.
+		/// </summary>
+		/// <param name="dependencies">The dependencies.</param>
+		public DependencyModelCollection(IList<DependencyModel> dependencies)
+		{
+			if (dependencies == null) return;
+
+			foreach (DependencyModel depModel in dependencies)
+			{
+				if (depModel == null)
+				{
+					throw new ArgumentNullException("dependencies", "dependencies has null entry");
+				}
+
+				Add(depModel);
+			}
 		}
 
 		public void AddRange(DependencyModelCollection dependencies)
