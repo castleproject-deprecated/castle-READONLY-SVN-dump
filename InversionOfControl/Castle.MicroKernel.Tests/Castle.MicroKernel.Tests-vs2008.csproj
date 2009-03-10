@@ -27,7 +27,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\bin\</OutputPath>
@@ -119,6 +119,7 @@
     <Compile Include="Bugs\Ioc113\IoC_113.cs" />
     <Compile Include="Bugs\Ioc113\SdiComponentMethods.cs" />
     <Compile Include="Bugs\Ioc113\StartableDisposableAndInitializableComponent.cs" />
+    <Compile Include="Bugs\IoC_141.cs" />
     <Compile Include="ClassComponents\BaseComponent.cs" />
     <Compile Include="ClassComponents\ClassWithArrayConstructor.cs" />
     <Compile Include="ClassComponents\ClassWithListConstructor.cs">
@@ -197,6 +198,7 @@
     <Compile Include="EventTests.cs" />
     <Compile Include="Facilities\FactorySupport\FactorySupportProgrammaticTestCase.cs" />
     <Compile Include="Facilities\FactorySupport\FactorySupportTestCase.cs" />
+    <Compile Include="Facilities\Startable\Components\StartableChainWithGenerics.cs" />
     <Compile Include="Facilities\Startable\Components\StartableComponentWithCustomDependencies.cs" />
     <Compile Include="HandlerForwardingTestCase.cs" />
     <Compile Include="KeySearchNamingSubSystemTestCase.cs" />

@@ -42,19 +42,43 @@ namespace Castle.MicroKernel.Handlers
 		{
 			if (!context.HasAdditionalParameters)
 			{
-				AssertNotWaitingForDependency();
+				if (CurrentState != HandlerState.Valid && !CanResolvePendingDependencies(context))
+				{
+					AssertNotWaitingForDependency();
+				}
 			}
 
 			using(CreationContext.ResolutionContext resCtx = context.EnterResolutionContext(this))
 			{
 			    object instance = lifestyleManager.Resolve(context);
 
-				resCtx.Burden.SetRootInstance(instance, this);
+				resCtx.Burden.SetRootInstance(instance, this, ComponentModel.LifecycleSteps.HasDecommissionSteps);
 
 				context.ReleasePolicy.Track(instance, resCtx.Burden);
 
 				return instance;
 			}
+		}
+
+		private bool CanResolvePendingDependencies(CreationContext context)
+		{
+			// detect circular dependencies
+			if (context.HandlerIsCurrentlyBeingResolved(this))
+				return false;
+
+            foreach (Type service in DependenciesByService.Keys)
+			{
+				// a self-dependency is not allowed
+				var handler = Kernel.GetHandler(service);
+				if (handler == this)
+					return false;
+
+				// ask the kernel
+				if (!Kernel.HasComponent(service))
+					return false;
+			}
+			
+			return DependenciesByKey.Count == 0;
 		}
 
 		/// <summary>
