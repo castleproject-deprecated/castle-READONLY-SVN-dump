@@ -197,7 +197,7 @@ namespace Castle.MicroKernel.Tests
 		}
 
 		[Test,ExpectedException(typeof(ComponentRegistrationException),
-			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instansiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.ICommon service")]
+			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instantiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.ICommon service")]
 		public void ShouldNotRegisterAbstractClassAsComponentImplementation_With_Simple_Signature()
 		{
 			kernel.AddComponent("abstract", typeof(ICommon), typeof(BaseCommonComponent));
@@ -205,7 +205,7 @@ namespace Castle.MicroKernel.Tests
 		}
 
 		[Test,ExpectedException(typeof(ComponentRegistrationException),
-			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instansiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent service")]
+			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instantiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent service")]
 		public void ShouldNotRegisterAbstractClass_With_Simple_Signature()
 		{
 			kernel.AddComponent("abstract", typeof(BaseCommonComponent));
@@ -213,7 +213,7 @@ namespace Castle.MicroKernel.Tests
 		}
 
 		[Test,ExpectedException(typeof(ComponentRegistrationException),
-			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instansiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.ICommon service")]
+			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instantiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.ICommon service")]
 		public void ShouldNotRegisterAbstractClassAsComponentImplementation_With_LifestyleType_Signature()
 		{
 			kernel.AddComponent("abstract", typeof(ICommon), typeof(BaseCommonComponent), LifestyleType.Pooled);
@@ -221,7 +221,7 @@ namespace Castle.MicroKernel.Tests
 		}
 
 		[Test,ExpectedException(typeof(ComponentRegistrationException),
-			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instansiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent service")]
+			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instantiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent service")]
 		public void ShouldNotRegisterAbstractClass_With_LifestyleType_Signature()
 		{
 			kernel.AddComponent("abstract", typeof(BaseCommonComponent), LifestyleType.Pooled);
@@ -230,7 +230,7 @@ namespace Castle.MicroKernel.Tests
 
 
 		[Test,ExpectedException(typeof(ComponentRegistrationException),
-			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instansiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.ICommon service")]
+			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instantiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.ICommon service")]
 		public void ShouldNotRegisterAbstractClassAsComponentImplementation_With_LifestyleType_And_Override_Signature()
 		{
 			kernel.AddComponent("abstract", typeof(ICommon), typeof(BaseCommonComponent), LifestyleType.Pooled, true);
@@ -239,7 +239,7 @@ namespace Castle.MicroKernel.Tests
 
 		[Test]
 		[ExpectedException(typeof(ComponentRegistrationException),
-			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instansiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent service")]
+			ExpectedMessage = "Type Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent is abstract.\r\n As such, it is not possible to instantiate it as implementation of Castle.MicroKernel.Tests.ClassComponents.BaseCommonComponent service")]
 		public void ShouldNotRegisterAbstractClass_With_LifestyleType_And_Override_Signature()
 		{
 			kernel.AddComponent("abstract", typeof(BaseCommonComponent), LifestyleType.Pooled, true);
