@@ -26,6 +26,9 @@ namespace Castle.Facilities.Startable
 		private ArrayList waitList = new ArrayList();
 		private ITypeConverter converter;
 
+		// Records whether we are in the start method.
+		private bool inStart;
+
 		protected override void Init()
 		{
 			converter = (ITypeConverter) Kernel.GetSubSystem(SubSystemConstants.ConversionManagerKey);
@@ -90,24 +93,29 @@ namespace Castle.Facilities.Startable
 		/// </summary>
 		private void CheckWaitingList()
 		{
-			IHandler[] handlers = (IHandler[]) waitList.ToArray(typeof(IHandler));
-
-			IList validList = new ArrayList();
-
-			foreach(IHandler handler in handlers)
+			// Don't check the waiting list while this flag is set as this could result in
+			// duplicate singletons.
+			if (!inStart)
 			{
-				if (handler.CurrentState == HandlerState.Valid)
+				IHandler[] handlers = (IHandler[])waitList.ToArray(typeof(IHandler));
+
+				IList validList = new ArrayList();
+
+				foreach (IHandler handler in handlers)
 				{
-					validList.Add(handler);
-					waitList.Remove(handler);
+					if (handler.CurrentState == HandlerState.Valid)
+					{
+						validList.Add(handler);
+						waitList.Remove(handler);
 
-					handler.OnHandlerStateChanged -= new HandlerStateDelegate(OnHandlerStateChanged);
+						handler.OnHandlerStateChanged -= new HandlerStateDelegate(OnHandlerStateChanged);
+					}
 				}
-			}
 
-			foreach(IHandler handler in validList)
-			{
-				Start(handler.ComponentModel.Name);
+				foreach (IHandler handler in validList)
+				{
+					Start(handler.ComponentModel.Name);
+				}
 			}
 		}
 
@@ -117,7 +125,19 @@ namespace Castle.Facilities.Startable
 		/// <param name="key"></param>
 		private void Start(String key)
 		{
-			object instance = Kernel[key];
+			try
+			{
+				// Set the flag so that if we get called again as a result of a kernel event
+				// we don't check the waiting list and call this function recursively because
+				// this could result in duplicate singletons or dependency cycles.
+				inStart = true;
+
+				object instance = Kernel[key];
+			}
+			finally
+			{
+				inStart = false;
+			}
 		}
 
 		private bool CheckIfComponentImplementsIStartable(ComponentModel model)
