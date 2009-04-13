@@ -70,7 +70,13 @@ namespace Castle.Components.Validator.Tests.ValidatorTests
 
 		public class TestTarget
 		{
-			public string TargetField { get; set; }
+			private string targetField;
+
+			public string TargetField
+			{
+				get { return targetField; }
+				set { targetField = value; }
+			}
 		}
 	}
 }

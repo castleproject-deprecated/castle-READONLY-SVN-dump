@@ -93,7 +93,7 @@ namespace Castle.Components.Validator.Validators
 		{
 			if (fieldValue != null && fieldValue.ToString() != "")
 			{
-				var value = fieldValue.ToString();
+				string value = fieldValue.ToString();
 
 				if (value.Length > 0)
 				{

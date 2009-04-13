@@ -44,7 +44,7 @@ namespace Castle.MicroKernel.Tests.Lifestyle
 		public void TransientReferencesAreNotHeldByContainer()
 		{
 			kernel.Register( Component.For<EmptyClass>().LifeStyle.Transient ); 
-			var emptyClassWeakReference = new WeakReference(kernel.Resolve<EmptyClass>());
+			WeakReference emptyClassWeakReference = new WeakReference(kernel.Resolve<EmptyClass>());
 			
 			GC.Collect();
 			GC.WaitForPendingFinalizers();

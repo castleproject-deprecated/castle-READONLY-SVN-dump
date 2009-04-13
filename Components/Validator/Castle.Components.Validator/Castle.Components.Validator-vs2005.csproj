@@ -42,6 +42,7 @@
     <Compile Include="AccessorUtil.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Attributes\AbstractCrossReferenceValidationAttribute.cs" />
+    <Compile Include="Attributes\ValidateGuidAttribute.cs" />
     <Compile Include="Attributes\ValidateIsLesserAttribute.cs" />
     <Compile Include="Attributes\ValidateCreditCardAttribute.cs" />
     <Compile Include="Attributes\ValidateDateAttribute.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Attributes\ValidateSelfAttribute.cs" />
     <Compile Include="Attributes\ValidateSetAttribute.cs" />
     <Compile Include="Attributes\ValidateSingleAttribute.cs" />
+    <Compile Include="Attributes\ValidateTimeSpanAttribute.cs" />
     <Compile Include="Attributes\ValidatorContainerInterfaceFlagAttribute.cs" />
     <Compile Include="Contributors\AbstractValidationContributor.cs" />
     <Compile Include="Contributors\SelfValidationContributor.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="IValidationPerformer.cs" />
     <Compile Include="IValidatorContainerInterface.cs" />
     <Compile Include="IValidatorRunner.cs" />
+    <Compile Include="Messages.es.Designer.cs" />
     <Compile Include="Messages.fr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +138,7 @@
     <Compile Include="Validators\AbstractValidator.cs" />
     <Compile Include="IValidatorBuilder.cs" />
     <Compile Include="Validators\CollectionNotEmptyValidator.cs" />
+    <Compile Include="Validators\GuidValidator.cs" />
     <Compile Include="Validators\IsLesserValidator.cs" />
     <Compile Include="Validators\IsGreaterValidator.cs" />
     <Compile Include="Validators\NotSameAsValidator.cs" />
@@ -158,6 +162,7 @@
     <Compile Include="Validators\SetValidator.cs" />
     <Compile Include="Validators\SingleValidator.cs" />
     <Compile Include="BrowserValidationConfiguration.cs" />
+    <Compile Include="Validators\TimeSpanValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Messages.es.resx">
@@ -169,6 +174,12 @@
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.mk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.pl.resx">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Messages.ru.resx">
       <SubType>Designer</SubType>

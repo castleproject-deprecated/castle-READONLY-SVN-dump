@@ -9,7 +9,7 @@ namespace Castle.MicroKernel.Tests.Bugs
 		[Test]
 		public void Can_resolve_open_generic_service_with_closed_generic_parameter()
 		{
-			var kernel = new DefaultKernel();
+			IKernel kernel = new DefaultKernel();
 			kernel.AddComponent("processor", typeof(IProcessor<>), typeof(DefaultProcessor<>));
 			kernel.AddComponent("assembler", typeof(IAssembler<object>), typeof(ObjectAssembler));
 			Assert.IsInstanceOfType(typeof(DefaultProcessor<object>), kernel.Resolve<IProcessor<object>>());
@@ -18,7 +18,7 @@ namespace Castle.MicroKernel.Tests.Bugs
 		[Test]
 		public void Can_resolve_service_with_open_generic_parameter_with_closed_generic_parameter()
 		{
-			var kernel = new DefaultKernel();
+			IKernel kernel = new DefaultKernel();
 			kernel.AddComponent("service1", typeof(IService), typeof(Service1));
 			kernel.AddComponent("processor", typeof(IProcessor<>), typeof(DefaultProcessor<>));
 			kernel.AddComponent("assembler", typeof(IAssembler<object>), typeof(ObjectAssembler));
@@ -29,7 +29,7 @@ namespace Castle.MicroKernel.Tests.Bugs
 		[ExpectedException(typeof(HandlerException))]
 		public void Throws_right_exception_when_not_found_matching_generic_service()
 		{
-			var kernel = new DefaultKernel();
+			IKernel kernel = new DefaultKernel();
 			kernel.AddComponent("processor", typeof(IProcessor<>), typeof(DefaultProcessor<>));
 			kernel.AddComponent("assembler", typeof(IAssembler<object>), typeof(ObjectAssembler));
 			kernel.Resolve<IProcessor<int>>();

@@ -69,7 +69,7 @@ namespace Castle.MicroKernel.Handlers
             foreach (Type service in DependenciesByService.Keys)
 			{
 				// a self-dependency is not allowed
-				var handler = Kernel.GetHandler(service);
+				IHandler handler = Kernel.GetHandler(service);
 				if (handler == this)
 					return false;
 
