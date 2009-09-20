@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0F611C1B-EDFD-46E6-9C3A-95420946E9CC}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,7 +45,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
@@ -110,44 +110,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractTransaction.cs">
+    <Compile Include="Adapters\DirectoryAdapter.cs" />
+    <Compile Include="Adapters\FileResourceAdapter.cs" />
+    <Compile Include="Adapters\TxAdapterBase.cs" />
+    <Compile Include="Attributes\Attributes.cs" />
+    <Compile Include="Attributes\InjectTransaction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IMapPath.cs" />
+    <Compile Include="Transactions\AbstractTransaction.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Attributes.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CallContextActivityManager.cs" />
-    <Compile Include="CommitResourceException.cs" />
-    <Compile Include="DefaultTransactionManager.cs">
+    <Compile Include="Managers\CallContextActivityManager.cs" />
+    <Compile Include="Exceptions\CommitResourceException.cs" />
+    <Compile Include="Managers\DefaultTransactionManager.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Activity.cs" />
-    <Compile Include="IActivityManager.cs" />
-    <Compile Include="IResource.cs">
+    <Compile Include="Transactions\FileTransaction.cs" />
+    <Compile Include="FtX\SafeFindHandle.cs" />
+    <Compile Include="FtX\SafeTxHandle.cs" />
+    <Compile Include="Interfaces\IActivityManager.cs" />
+    <Compile Include="Interfaces\IDirectoryAdapter.cs" />
+    <Compile Include="Interfaces\IFileAdapter.cs" />
+    <Compile Include="Interfaces\IFileTransaction.cs" />
+    <Compile Include="Interfaces\IKernelTransaction.cs" />
+    <Compile Include="Interfaces\IResource.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ISynchronization.cs">
+    <Compile Include="Interfaces\ISynchronization.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ITransaction.cs">
+    <Compile Include="Interfaces\ITransaction.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ITransactionManager.cs">
+    <Compile Include="Interfaces\ITransactionManager.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ResourceException.cs" />
-    <Compile Include="RollbackResourceException.cs" />
-    <Compile Include="StandardTransaction.cs">
+    <Compile Include="Exceptions\ResourceException.cs" />
+    <Compile Include="Exceptions\RollbackResourceException.cs" />
+    <Compile Include="Transactions\StandardTransaction.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TLSActivityManager.cs" />
-    <Compile Include="TransactionException.cs">
+    <Compile Include="Managers\TLSActivityManager.cs" />
+    <Compile Include="Exceptions\TransactionException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TransactionScopeResourceAdapter.cs" />
+    <Compile Include="Adapters\TransactionScopeResourceAdapter.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+    <Compile Include="Utils\PathUtil.cs" />
+    <Compile Include="Utils\Tuple.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\CastleKey.snk">

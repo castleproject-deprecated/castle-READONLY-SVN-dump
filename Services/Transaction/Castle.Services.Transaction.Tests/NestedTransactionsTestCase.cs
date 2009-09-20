@@ -15,6 +15,7 @@
 namespace Castle.Services.Transaction.Tests
 {
 	using System;
+	using System.Collections.Generic;
 
 	using NUnit.Framework;
 
@@ -158,6 +159,31 @@ namespace Castle.Services.Transaction.Tests
 			child2.Begin();
 
 			tm.Dispose(root);
+		}
+
+		[Test(Description = "Previously a child transaction iterated over its own resources which obviously it doesn't have " +
+			"since it enlists all resources in the parent transaction, i.e. a bug.")]
+		public void Nested_ChildTransaction_MustIterate_ParentsResources()
+		{
+			var t = tm.CreateTransaction(TransactionMode.Requires, IsolationMode.Unspecified);
+			t.Begin();
+
+			var child = tm.CreateTransaction(TransactionMode.Requires, IsolationMode.Unspecified);
+			child.Begin();
+
+			Assert.IsInstanceOf(typeof(ChildTransaction), child);
+
+			child.Enlist(new ResourceImpl());
+
+			Assert.AreEqual(1, len(t.Resources));
+		}
+
+		private static int len<T>(IEnumerable<T> en)
+		{
+			int c = 0;
+			foreach (var item in en)
+				c++;
+			return c;
 		}
 	}
 }
