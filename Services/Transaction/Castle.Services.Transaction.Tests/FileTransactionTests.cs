@@ -20,6 +20,8 @@ namespace Castle.Services.Transaction.Tests
 	using System.Text;
 	using System.Transactions;
 	using NUnit.Framework;
+	using TransactionException=Castle.Services.Transaction.TransactionException;
+	using TransactionStatus=Castle.Services.Transaction.TransactionStatus;
 
 	[TestFixture]
 	public class FileTransactionTests
