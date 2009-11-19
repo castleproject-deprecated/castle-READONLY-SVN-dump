@@ -10,18 +10,18 @@
 
 	<fileset id="buildfiles.all">
 		<!-- Files have to be in dependency order -->
-		<include name="AutomaticTransactionManagement/AutomaticTransactionManagement.build" />
-		<include name="ActiveRecordIntegration/ActiveRecordIntegration.build" />
+		<include name="AutomaticTransactionManagement/src/AutomaticTransactionManagement.build" />
+		<include name="ActiveRecordIntegration/src/ActiveRecordIntegration.build" />
 		<!--
 		<include name="DynamicLoader/DynamicLoader.build" />
 		-->
-		<include name="BatchRegistration/BatchRegistration.build" />
-		<include name="Cache/Cache.build" />
-		<include name="Logging/Logging.build" /> 
-		<include name="NHibernateIntegration/NHibernateIntegration.build" />
-		<include name="Synchronize/Synchronize.build" />
+		<include name="BatchRegistration/src/BatchRegistration.build" />
+		<include name="Cache/src/Cache.build" />
+		<include name="Logging/src/Logging.build" /> 
+		<include name="NHibernateIntegration/src/NHibernateIntegration.build" />
+		<include name="Synchronize/src/Synchronize.build" />
 		<include name="Remoting/Remoting.build" />
-		<include name="Wcf/default.build" if="${dotnet.v3.0.installed}"/>
+		<include name="Wcf/src/default.build" if="${dotnet.v3.0.installed}"/>
 	</fileset>
 
 	<target name="build" depends="common.build" />

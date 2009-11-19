@@ -9,13 +9,13 @@
 
 	<fileset id="buildfiles.all">
 		<!-- Files have to be in dependency order -->
-		<include name="Validator/Validator.build" />
-		<include name="Binder/Binder.build" />
-		<include name="TemplateEngine/TemplateEngine.build" />
-		<include name="EmailSender/EmailSender.build" />
-		<include name="DictionaryAdapter/DictionaryAdapter.build" />
-		<include name="Scheduler/Scheduler.build" />
-		<include name="Pagination/Pagination.build" />
+		<include name="Validator/src/Validator.build" />
+		<include name="Binder/src/Binder.build" />
+		<include name="TemplateEngine/src/TemplateEngine.build" />
+		<include name="EmailSender/src/EmailSender.build" />
+		<include name="DictionaryAdapter/src/DictionaryAdapter.build" />
+		<include name="Scheduler/src/Scheduler.build" />
+		<include name="Pagination/src/Pagination.build" />
 	</fileset>
 
 	<target name="build" depends="common.build" />
