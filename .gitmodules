@@ -1,69 +1,69 @@
 [submodule "ActiveRecord"]
 	path = ActiveRecord
-	url = git://github.com/mausch/Castle.ActiveRecord.git
+	url = git://github.com/castleproject/Castle.ActiveRecord.git
 [submodule "Components/Binder"]
 	path = Components/Binder
-	url = git://github.com/mausch/Castle.Components.Binder.git
+	url = git://github.com/castleproject/Castle.Components.Binder.git
 [submodule "Services/Transaction"]
 	path = Services/Transaction
-	url = git://github.com/mausch/Castle.Services.Transaction.git
+	url = git://github.com/castleproject/Castle.Services.Transaction.git
 [submodule "Services/Logging"]
 	path = Services/Logging
-	url = git://github.com/mausch/Castle.Services.Logging.git
+	url = git://github.com/castleproject/Castle.Services.Logging.git
 [submodule "MonoRail"]
 	path = MonoRail
-	url = git://github.com/mausch/Castle.MonoRail.git
+	url = git://github.com/castleproject/Castle.MonoRail.git
 [submodule "Tools/NVelocity"]
 	path = Tools/NVelocity
-	url = git://github.com/mausch/NVelocity.git
+	url = git://github.com/castleproject/NVelocity.git
 [submodule "Core"]
 	path = Core
-	url = git://github.com/mausch/Castle.Core.git
+	url = git://github.com/castleproject/Castle.Core.git
 [submodule "Tools/Castle.DynamicProxy2"]
 	path = Tools/Castle.DynamicProxy2
-	url = git://github.com/mausch/Castle.DynamicProxy.git
+	url = git://github.com/castleproject/Castle.DynamicProxy.git
 [submodule "Facilities/Logging"]
 	path = Facilities/Logging
-	url = git://github.com/mausch/Castle.Facilities.Logging.git
+	url = git://github.com/castleproject/Castle.Facilities.Logging.git
 [submodule "Facilities/Cache"]
 	path = Facilities/Cache
-	url = git://github.com/mausch/Castle.Facilities.Cache.git
+	url = git://github.com/castleproject/Castle.Facilities.Cache.git
 [submodule "Facilities/BatchRegistration"]
 	path = Facilities/BatchRegistration
-	url = git://github.com/mausch/Castle.Facilities.BatchRegistration.git
+	url = git://github.com/castleproject/Castle.Facilities.BatchRegistration.git
 [submodule "Components/Validator"]
 	path = Components/Validator
-	url = git://github.com/mausch/Castle.Components.Validator.git
+	url = git://github.com/castleproject/Castle.Components.Validator.git
 [submodule "Components/TemplateEngine"]
 	path = Components/TemplateEngine
-	url = git://github.com/mausch/Castle.Components.TemplateEngine.git
+	url = git://github.com/castleproject/Castle.Components.TemplateEngine.git
 [submodule "Components/Scheduler"]
 	path = Components/Scheduler
-	url = git://github.com/mausch/Castle.Components.Scheduler.git
+	url = git://github.com/castleproject/Castle.Components.Scheduler.git
 [submodule "Components/Pagination"]
 	path = Components/Pagination
-	url = git://github.com/mausch/Castle.Components.Pagination.git
+	url = git://github.com/castleproject/Castle.Components.Pagination.git
 [submodule "Components/EmailSender"]
 	path = Components/EmailSender
-	url = git://github.com/mausch/Castle.Components.EmailSender.git
+	url = git://github.com/castleproject/Castle.Components.EmailSender.git
 [submodule "Components/DictionaryAdapter"]
 	path = Components/DictionaryAdapter
-	url = git://github.com/mausch/Castle.Components.DictionaryAdapter.git
+	url = git://github.com/castleproject/Castle.Components.DictionaryAdapter.git
 [submodule "InversionOfControl"]
 	path = InversionOfControl
-	url = git://github.com/mausch/Castle.InversionOfControl.git
+	url = git://github.com/castleproject/Castle.InversionOfControl.git
 [submodule "Facilities/AutomaticTransactionManagement"]
 	path = Facilities/AutomaticTransactionManagement
-	url = git://github.com/mausch/Castle.Facilities.AutomaticTransactionManagement.git
+	url = git://github.com/castleproject/Castle.Facilities.AutomaticTransactionManagement.git
 [submodule "Facilities/ActiveRecordIntegration"]
 	path = Facilities/ActiveRecordIntegration
-	url = git://github.com/mausch/Castle.Facilities.ActiveRecordIntegration.git
+	url = git://github.com/castleproject/Castle.Facilities.ActiveRecordIntegration.git
 [submodule "Facilities/Wcf"]
 	path = Facilities/Wcf
-	url = git://github.com/mausch/Castle.Facilities.Wcf.git
+	url = git://github.com/castleproject/Castle.Facilities.Wcf.git
 [submodule "Facilities/NHibernateIntegration"]
 	path = Facilities/NHibernateIntegration
-	url = git://github.com/mausch/Castle.Facilities.NHibernateIntegration.git
+	url = git://github.com/castleproject/Castle.Facilities.NHibernateIntegration.git
 [submodule "Facilities/Synchronize"]
 	path = Facilities/Synchronize
-	url = git://github.com/mausch/Castle.Facilities.Synchronize.git
+	url = git://github.com/castleproject/Castle.Facilities.Synchronize.git
